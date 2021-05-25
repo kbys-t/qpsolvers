@@ -62,6 +62,7 @@ def cvxopt_solve_qp(
     solver: str = None,
     initvals=None,
     verbose: bool = False,
+    **kwargs,
 ) -> Optional[ndarray]:
     """
     Solve a Quadratic Program defined as:

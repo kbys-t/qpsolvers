@@ -36,6 +36,7 @@ def cvxpy_solve_qp(
     initvals=None,
     solver: str = None,
     verbose: bool = False,
+    **kwargs,
 ) -> Optional[ndarray]:
     """
     Solve a Quadratic Program defined as:

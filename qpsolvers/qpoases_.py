@@ -45,6 +45,7 @@ def qpoases_solve_qp(
     initvals=None,
     verbose: bool = False,
     max_wsr: int = 1000,
+    time_limit: float = 0.0,
 ) -> Optional[ndarray]:
     """
     Solve a Quadratic Program defined as:
@@ -123,13 +124,13 @@ def qpoases_solve_qp(
     if has_cons:
         qp = QProblem(n, C.shape[0])
         qp.setOptions(__options__)
-        return_value = qp.init(P, q, C, lb, ub, lb_C, ub_C, array([max_wsr]))
+        return_value = qp.init(P, q, C, lb, ub, lb_C, ub_C, array([max_wsr]), array([time_limit]))
         if return_value == ReturnValue.MAX_NWSR_REACHED:
             print("qpOASES reached the maximum number of WSR (%d)" % max_wsr)
     else:
         qp = QProblemB(n)
         qp.setOptions(__options__)
-        qp.init(P, q, lb, ub, max_wsr)
+        qp.init(P, q, lb, ub, max_wsr, array([time_limit]))
     x_opt = zeros(n)
     ret = qp.getPrimalSolution(x_opt)
     if ret != 0:  # 0 == SUCCESSFUL_RETURN code of qpOASES

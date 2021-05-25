@@ -22,32 +22,20 @@
 # included as a git submodule inside a project. It incurs some redundant
 # bookkeeping but some users find it useful.
 
-from .qpsolvers import __version__
-from .qpsolvers import available_solvers
-from .qpsolvers import cvxopt_solve_qp
-from .qpsolvers import cvxpy_solve_qp
-from .qpsolvers import dense_solvers
-from .qpsolvers import gurobi_solve_qp
-from .qpsolvers import mosek_solve_qp
-from .qpsolvers import qpoases_solve_qp
-from .qpsolvers import quadprog_solve_qp
-from .qpsolvers import solve_ls
-from .qpsolvers import solve_qp
-from .qpsolvers import solve_safer_qp
-from .qpsolvers import sparse_solvers
+from qpsolvers.qpsolvers import __version__
+from qpsolvers.qpsolvers import available_solvers
+from qpsolvers.qpsolvers import dense_solvers
+from qpsolvers.qpsolvers import sparse_solvers
+from qpsolvers.qpsolvers import solve_ls
+from qpsolvers.qpsolvers import solve_qp
+from qpsolvers.qpsolvers import solve_safer_qp
 
 __all__ = [
     "__version__",
     "available_solvers",
-    "cvxopt_solve_qp",
-    "cvxpy_solve_qp",
     "dense_solvers",
-    "gurobi_solve_qp",
-    "mosek_solve_qp",
-    "qpoases_solve_qp",
-    "quadprog_solve_qp",
+    "sparse_solvers",
     "solve_ls",
     "solve_qp",
     "solve_safer_qp",
-    "sparse_solvers",
 ]

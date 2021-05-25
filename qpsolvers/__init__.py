@@ -36,7 +36,7 @@ __solve_function__: Dict[str, Any] = {}
 # ======
 
 try:
-    from .cvxopt_ import cvxopt_solve_qp
+    from qpsolvers.qpsolvers.cvxopt_ import cvxopt_solve_qp
 
     __solve_function__["cvxopt"] = cvxopt_solve_qp
     available_solvers.append("cvxopt")
@@ -48,7 +48,7 @@ except ImportError:
 # =====
 
 try:
-    from .cvxpy_ import cvxpy_solve_qp
+    from qpsolvers.qpsolvers.cvxpy_ import cvxpy_solve_qp
 
     __solve_function__["cvxpy"] = cvxpy_solve_qp
     available_solvers.append("cvxpy")
@@ -60,7 +60,7 @@ except ImportError:
 # ====
 
 try:
-    from .ecos_ import ecos_solve_qp
+    from qpsolvers.qpsolvers.ecos_ import ecos_solve_qp
 
     __solve_function__["ecos"] = ecos_solve_qp
     available_solvers.append("ecos")
@@ -72,7 +72,7 @@ except ImportError:
 # ======
 
 try:
-    from .gurobi_ import gurobi_solve_qp
+    from qpsolvers.qpsolvers.gurobi_ import gurobi_solve_qp
 
     __solve_function__["gurobi"] = gurobi_solve_qp
     available_solvers.append("gurobi")
@@ -84,7 +84,7 @@ except ImportError:
 # =====
 
 try:
-    from .mosek_ import mosek_solve_qp
+    from qpsolvers.qpsolvers.mosek_ import mosek_solve_qp
 
     __solve_function__["mosek"] = mosek_solve_qp
     available_solvers.append("mosek")
@@ -96,7 +96,7 @@ except ImportError:
 # ====
 
 try:
-    from .osqp_ import osqp_solve_qp
+    from qpsolvers.qpsolvers.osqp_ import osqp_solve_qp
 
     __solve_function__["osqp"] = osqp_solve_qp
     available_solvers.append("osqp")
@@ -108,7 +108,7 @@ except ImportError:
 # =======
 
 try:
-    from .qpoases_ import qpoases_solve_qp
+    from qpsolvers.qpsolvers.qpoases_ import qpoases_solve_qp
 
     __solve_function__["qpoases"] = qpoases_solve_qp
     available_solvers.append("qpoases")
@@ -120,7 +120,7 @@ except ImportError:
 # ========
 
 try:
-    from .quadprog_ import quadprog_solve_qp
+    from qpsolvers.qpsolvers.quadprog_ import quadprog_solve_qp
 
     __solve_function__["quadprog"] = quadprog_solve_qp
     available_solvers.append("quadprog")
@@ -132,7 +132,7 @@ except ImportError:
 # ========
 
 try:
-    from .scs_ import scs_solve_qp
+    from qpsolvers.qpsolvers.scs_ import scs_solve_qp
 
     __solve_function__["scs"] = scs_solve_qp
     available_solvers.append("scs")

@@ -44,6 +44,7 @@ def osqp_solve_qp(
     eps_abs: float = 1e-4,
     eps_rel: float = 1e-4,
     polish: bool = True,
+    time_limit: float = 0.0,
     **kwargs
 ) -> Optional[ndarray]:
     """
@@ -120,6 +121,7 @@ def osqp_solve_qp(
         "eps_abs": eps_abs,
         "eps_rel": eps_rel,
         "polish": polish,
+        "time_limit": time_limit,
         "verbose": verbose,
     }
     if A is None and G is None:

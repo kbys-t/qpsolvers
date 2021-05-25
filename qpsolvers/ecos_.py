@@ -39,7 +39,7 @@ __exit_flag_meaning__ = {
 
 
 def ecos_solve_qp(
-    P, q, G=None, h=None, A=None, b=None, initvals=None, verbose: bool = False
+    P, q, G=None, h=None, A=None, b=None, initvals=None, verbose: bool = False, **kwargs,
 ) -> Optional[ndarray]:
     """
     Solve a Quadratic Program defined as:
